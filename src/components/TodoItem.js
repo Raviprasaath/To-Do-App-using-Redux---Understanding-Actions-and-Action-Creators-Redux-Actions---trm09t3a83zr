@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { toggleTodo, deleteTodo } from '../redux/actions';
 
 const TodoItem = ({ todo }) => {
-  
   const dispatch = useDispatch();
 
   const handleToggle = () => {
@@ -13,15 +12,16 @@ const TodoItem = ({ todo }) => {
   const handleDelete = () => {
     dispatch(deleteTodo(todo.id));
   };
-  
+
   return (
     <li>
       <span
         style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
+        onClick={handleToggle}
       >
         {todo.text}
       </span>
-      <button>Delete</button>
+      <button onClick={handleDelete}>Delete</button>
     </li>
   );
 };
