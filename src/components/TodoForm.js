@@ -5,7 +5,7 @@ import { addTodo } from '../redux/actions';
 const TodoForm = () => {
   const dispatch = useDispatch();
   const [taskText, setTaskText] = useState('');
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (taskText.trim() !== '') {
@@ -14,7 +14,6 @@ const TodoForm = () => {
     }
   };
 
-  
   return (
     <form onSubmit={handleSubmit}>
       <input
