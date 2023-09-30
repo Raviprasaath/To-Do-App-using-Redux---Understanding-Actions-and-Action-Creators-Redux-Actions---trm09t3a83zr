@@ -4,12 +4,14 @@ import TodoItem from './TodoItem';
 
 const TodoList = () => {
   const todos = useSelector((state) => state.todos);
-  
-  return <ul>
+
+  return (
+    <ul>
       {todos.map((todo) => (
         <TodoItem key={todo.id} todo={todo} />
       ))}
-    </ul>;
+    </ul>
+  );
 };
 
 export default TodoList;
